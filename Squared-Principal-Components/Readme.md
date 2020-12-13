@@ -1,6 +1,6 @@
 This file has three functions.
 The first function (SPC) does Squared Principal Components on a dataset using the prcomp function of R base. 
-The function creates a new matrix that has the twice the columns of the dataset matrix. The new columns
+The function creates a new matrix that has twice the columns of the dataset matrix. The new columns
 contain the elements of the original matrix squared.
 The function returns all the arguments that prcomp does, as well as the dimensions of the new matrix.
 The scale argument (as in prcomp) indicates whether the variables should be scaled to have unit variance.
