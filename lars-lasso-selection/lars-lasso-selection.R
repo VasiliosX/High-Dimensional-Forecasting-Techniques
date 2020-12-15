@@ -12,9 +12,9 @@ library(lars)
 
 
 
-lars.selection.b=function(X.pred,y.target,lambda,n.vars){
+lars.selection.b=function(X.pred,y.target,lambda,n.vars,type1='lar'){
   
-  lar.fit=lars(X.pred,y.target,type='lar')
+  lar.fit=lars(X.pred,y.target,type=type1)
   
   lar.pred=predict(lar.fit,s=lambda,mode='lambda',type='coefficients',newx=X.pred)
   
@@ -22,7 +22,25 @@ lars.selection.b=function(X.pred,y.target,lambda,n.vars){
   
   epil.names=names(sort(lar.coef,decreasing = TRUE)[1:n.vars])
   
-  return(matrix_X[,epil.names])
+  return(X,pred[,epil.names])
+  
+  
+}
+
+
+
+
+lars.selection.c=function(X.pred,y.target,lambda,n.vars,type1='lar'){
+  
+  lar.fit=lars(X.pred,y.target,type=type1)
+  
+  lar.pred=predict(lar.fit,s=lambda,mode='lambda',type='coefficients',newx=X.pred)
+  
+  lar.coef=lar.pred$coefficients[lar.pred$coefficients!=0]
+  
+  epil.names=names(sort(lar.coef,decreasing = TRUE)[1:n.vars])
+  
+  return(epil.names)
   
   
 }
