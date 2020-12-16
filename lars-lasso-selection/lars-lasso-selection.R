@@ -22,7 +22,7 @@ lars.selection.b=function(X.pred,y.target,lambda,n.vars,type1='lar'){
   
   epil.names=names(sort(lar.coef,decreasing = TRUE)[1:n.vars])
   
-  return(X,pred[,epil.names])
+  return(X.pred[,epil.names])
   
   
 }
