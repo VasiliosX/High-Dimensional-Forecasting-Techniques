@@ -8,4 +8,4 @@ The first model, which will be used as a benchmark, is a simple AR(4) of GDP.
 Those other files are required: Transformation of time series, own.ridge, lars-lasso,recursive prediction, Squared-Principal-Components,lars-lasso-selection.
 
 The current_copy_2 excel file contains the McCracke dataset. The last observation on this dataset is the 
-transformatio codes, the observation is removed after the transformatios.
+transformatio codes, the observation is removed after the transformations.
